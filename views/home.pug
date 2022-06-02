@@ -1,0 +1,47 @@
+extends base.pug
+
+block scripts 
+    script(src='/static/index.js')
+
+block style 
+    style
+      include ../static/style.css
+
+block content 
+    section#introSection 
+        div Welcome to CXDance Academy 
+        div.small "ANYBODY CAN DANCE"
+
+    section#missionSection 
+        h2 Our Mission
+        div.card
+            h3 Perfect Your Form 
+            div.card-box
+                div.card-img
+                    img(src="/static/img/1.png")
+                div.card-content
+                    p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, magni.
+        div.card
+            h3 Best Teachers
+            div.card-box
+                div.card-img
+                    img(src="/static/img/2.png")
+                div.card-content
+                    p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, magni.
+
+        div.card
+            h3 Largest Dance Auditorium
+            div.card-box
+                div.card-img
+                    img(src="/static/img/3.png")
+                div.card-content
+                    p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, magni.
+
+    section#sponsorSection 
+        h2 Our Sponsor
+        div#sponsors
+            img(src="/static/img/logo1.png", class="spImage")
+            img(src="/static/img/logo2.png", class="spImage")
+            img(src="/static/img/logo3.png", class="spImage")
+            img(src="/static/img/logo4.png", class="spImage")
+
