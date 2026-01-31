@@ -1,68 +1,33 @@
 const express = require("express");
 const path = require("path");
-const app = express();
-const port = 8000;
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-// Schema Definition
-var contactSchema = new mongoose.Schema({
-    name: String,
-    phone: String,
-    email: String,
-    address: String,
-    desc: String
-});
-var Contact = mongoose.model('Contact', contactSchema);
+const app = express();
 
 // Middleware
-app.use('/static', express.static(path.join(__dirname, 'static')));
-app.use(express.urlencoded({ extended: true })); // Added extended: true to fix warnings
+app.use("/static", express.static(path.resolve(__dirname, "static")));
+app.use(express.urlencoded({ extended: true }));
 
-// View Engine Setup - FIXED THE SPACE IN 'pug'
-app.set('view engine', 'pug'); 
-app.set('views', path.join(__dirname, 'views'));
+// View engine
+app.set("view engine", "pug");
+app.set("views", path.resolve(__dirname, "views"));
 
-// --- ROUTES ---
+// Routes
+app.get("/", (req, res) => res.render("home"));
+app.get("/about", (req, res) => res.render("academy"));
+app.get("/classes", (req, res) => res.render("programs"));
+app.get("/services", (req, res) => res.render("studio"));
+app.get("/contact", (req, res) => res.render("contact"));
 
-// Home Page
-app.get('/', (req, res) => {
-    res.status(200).render('home.pug');
-});
-
-// Academy Page
-app.get('/about', (req, res) => {
-    res.status(200).render('academy.pug');
-});
-
-// Programs Page
-app.get('/classes', (req, res) => {
-    res.status(200).render('programs.pug');
-});
-
-// Studio Page
-app.get('/services', (req, res) => {
-    res.status(200).render('studio.pug');
-});
-
-// Contact Page
-app.get('/contact', (req, res) => {
-    res.status(200).render('contact.pug');
-});
-
-// Post Route for Contact Form
-app.post('/contact', (req, res) => {
-    var myData = new Contact(req.body);
-    myData.save().then(() => {
-        res.send("Your response has been submitted");
-    }).catch(() => {
-        res.status(400).send("Item could not be saved");
-    });
+app.post("/contact", (req, res) => {
+  res.send("Form submitted");
 });
 
 module.exports = app;
 
-if (process.env.NODE_ENV !== 'production') {
-    app.listen(port, () => {
-        console.log(`Running successfully on http://localhost:${port}`);
-    });
+if (process.env.NODE_ENV !== "production") {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => {
+    console.log(`Running on http://localhost:${port}`);
+  });
 }
