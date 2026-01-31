@@ -4,13 +4,13 @@
     {
       "src": "app.js",
       "use": "@vercel/node",
-      "config": { "includeFiles": ["public/**", "views/**"] }
+      "config": { "includeFiles": ["static/**", "views/**"] }
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/public/$1"
+      "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
