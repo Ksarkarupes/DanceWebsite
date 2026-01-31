@@ -64,3 +64,9 @@ app.listen(port, () => {
 });
 
 module.exports = app;
+
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(port, () => {
+        console.log(`Running successfully on http://localhost:${port}`);
+    });
+}
