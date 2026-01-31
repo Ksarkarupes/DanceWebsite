@@ -15,7 +15,7 @@ var contactSchema = new mongoose.Schema({
 var Contact = mongoose.model('Contact', contactSchema);
 
 // Middleware
-app.use('/static', express.static('static'));
+app.use('/static', express.static(path.join(__dirname, 'static')));
 app.use(express.urlencoded({ extended: true })); // Added extended: true to fix warnings
 
 // View Engine Setup - FIXED THE SPACE IN 'pug'
@@ -57,10 +57,6 @@ app.post('/contact', (req, res) => {
     }).catch(() => {
         res.status(400).send("Item could not be saved");
     });
-});
-
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
 });
 
 module.exports = app;
