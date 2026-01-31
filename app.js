@@ -1,11 +1,10 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const port = 80;
+const port = 8000;
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/contactDance', {useNewUrlParser: true, useUnifiedTopology: true});
 
-
+// Schema Definition
 var contactSchema = new mongoose.Schema({
     name: String,
     phone: String,
@@ -15,31 +14,53 @@ var contactSchema = new mongoose.Schema({
 });
 var Contact = mongoose.model('Contact', contactSchema);
 
+// Middleware
 app.use('/static', express.static('static'));
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true })); // Added extended: true to fix warnings
 
-app.set('view engine', ' pug');
+// View Engine Setup - FIXED THE SPACE IN 'pug'
+app.set('view engine', 'pug'); 
 app.set('views', path.join(__dirname, 'views'));
 
-app.get('/',(req, res)=>{
-    const param = {};
-    res.status(200).render('home.pug', param);
+// --- ROUTES ---
+
+// Home Page
+app.get('/', (req, res) => {
+    res.status(200).render('home.pug');
 });
 
-app.get('/contact',(req, res)=>{
-    const param = {};
-    res.status(200).render('contact.pug', param);
+// Academy Page
+app.get('/about', (req, res) => {
+    res.status(200).render('academy.pug');
 });
-app.post('/contact',(req, res)=>{
+
+// Programs Page
+app.get('/classes', (req, res) => {
+    res.status(200).render('programs.pug');
+});
+
+// Studio Page
+app.get('/services', (req, res) => {
+    res.status(200).render('studio.pug');
+});
+
+// Contact Page
+app.get('/contact', (req, res) => {
+    res.status(200).render('contact.pug');
+});
+
+// Post Route for Contact Form
+app.post('/contact', (req, res) => {
     var myData = new Contact(req.body);
-    myData.save().then(()=>{
-        res.send("Your response have been submitted");
-    }).catch(()=>{
-        res.status(400).send("Item couldnot be saved");
+    myData.save().then(() => {
+        res.send("Your response has been submitted");
+    }).catch(() => {
+        res.status(400).send("Item could not be saved");
     });
-    
 });
 
-  app.listen(port, ()=>{
-    console.log(`Running succesfully on ${port}`);
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
 });
+
+module.exports = app;

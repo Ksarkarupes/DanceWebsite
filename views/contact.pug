@@ -10,12 +10,15 @@ block style
 
 block content 
     div.container
-        h1 Contact Us 
+        h1 Join the Academy
+        p.contact-desc Ready to start your journey? Fill out the form below and our instructors will get in touch with you.
+        
         form(action="/contact", method="post", class="myForm") 
-            input(type="text", name="name", class="myInput", placeholder="Enter Your Name")
-            input(type="phone", name="phone", class="myInput", placeholder="Enter Your Contact No.")
-            input(type="email", name="email", class="myInput", placeholder="Enter Your Email Id")
-            input(type="text", name="address", class="myInput", placeholder="Enter Your Address")
-            input(type="text", name="desc", class="myInput", placeholder="Leave Your Query")
+            input(type="text", name="name", class="myInput", placeholder="Full Name" required)
+            input(type="phone", name="phone", class="myInput", placeholder="Contact Number" required)
+            input(type="email", name="email", class="myInput", placeholder="Email Address" required)
+            input(type="text", name="address", class="myInput", placeholder="City/Address")
+            textarea(name="desc", class="myInput", placeholder="Tell us about your dance background or queries", rows="4")
+            
             button(class="btn")
-                |Submit
+                | Submit Application

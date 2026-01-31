@@ -1,0 +1,121 @@
+/* stylePrograms.css */
+
+#programsHero {
+    height: 50vh;
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url("/static/bg.jpg") center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#programsHero h1 {
+    font-size: 3.5rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.curriculum-intro {
+    padding: 80px 10% 40px 10%;
+    text-align: center;
+    background-color: #070707;
+}
+
+.curriculum-intro h2 {
+    color: #ff8c00;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.curriculum-intro p {
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Bento Grid System */
+.bento-container {
+    background-color: #070707;
+    padding: 40px 10% 100px 10%;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bento-item {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 24px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.bento-item:hover {
+    border-color: #ff8c00;
+    transform: scale(1.02);
+}
+
+.bento-item h3 {
+    color: #ff8c00;
+    font-family: 'Montserrat';
+    margin-bottom: 10px;
+}
+
+.bento-item p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Grid Logic */
+.featured { grid-row: span 2; display: flex; flex-direction: column; justify-content: center; }
+.medium { grid-row: span 1; }
+.wide { grid-column: span 2; grid-row: span 1; }
+.small { grid-column: span 1; display: flex; align-items: center; justify-content: center; text-align: center; }
+
+/* Decorative Elements */
+.bento-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ff8c00;
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.features-list {
+    margin-top: 20px;
+    list-style: none;
+    color: #fff;
+    font-size: 0.85rem;
+}
+
+.features-list li::before {
+    content: "→ ";
+    color: #ff8c00;
+}
+
+.wide-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.visual-icon {
+    font-size: 3rem;
+    opacity: 0.2;
+}

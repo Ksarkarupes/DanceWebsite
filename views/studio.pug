@@ -1,0 +1,49 @@
+extends base.pug
+
+block style 
+    style
+        include ../static/style.css
+        include ../static/styleStudio.css
+
+block content 
+    section#studioHero
+        div.hero-content
+            h1 The Facility
+            p.tagline Industrial Space. Professional Standards.
+
+    section.gallery-intro
+        h2 Engineering the Perfect Environment
+        p Our studio isn't just a room; it's a technical environment designed for peak performance. From impact-absorbing subfloors to custom acoustic treatments, every square inch of our Raipur facility is built to support your growth.
+
+    section.masonry-wrapper
+        div.masonry-container
+            //- We use different classes (tall, wide) to create the masonry effect
+            div.gallery-item.tall
+                img(src="/static/img/studio1.jpg" alt="Main Floor")
+                div.overlay
+                    span Main Performance Hall
+            
+            div.gallery-item
+                img(src="/static/img/studio2.jpg" alt="Equipment")
+                div.overlay
+                    span Strength & Conditioning
+            
+            div.gallery-item.wide
+                img(src="/static/img/studio3.jpg" alt="Lighting")
+                div.overlay
+                    span Ambient Lighting Systems
+            
+            div.gallery-item
+                img(src="/static/img/studio4.jpg" alt="Audio")
+                div.overlay
+                    span High-Fidelity Audio
+            
+            div.gallery-item.tall
+                img(src="/static/img/studio5.jpg" alt="Lounge")
+                div.overlay
+                    span The Artist Lounge
+
+            div.gallery-item
+                img(src="/static/img/studio6.jpg" alt="Yoga")
+                div.overlay
+                    span Flexibility Zone

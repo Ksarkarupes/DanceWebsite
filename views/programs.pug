@@ -1,0 +1,56 @@
+extends base.pug
+
+block style 
+    style
+        include ../static/style.css
+        include ../static/stylePrograms.css
+
+block content 
+    section#programsHero
+        div.hero-content
+            h1 Training Programs
+            p.tagline Algorithmic Training for Artistic Excellence
+
+    section.curriculum-intro
+        h2 The Syllabus
+        p Our curriculum is divided into specific modules designed for linear progression. Whether you are starting from zero or refining professional skills, our "Structure & Soul" methodology ensures every movement is technically sound and artistically expressive.
+
+    section.bento-container
+        div.bento-grid
+            //- Large Item: Primary Foundation
+            div.bento-item.featured
+                div.bento-tag New Session
+                h3 Foundation 1.0
+                p The essential entry point. Focus on structural alignment, core stability, and the basic logic of rhythmic patterns.
+                ul.features-list
+                    li Posture Mechanics
+                    li Balance Control
+                    li Basic Tempo Logic
+            
+            //- Medium Item
+            div.bento-item.medium
+                h3 Urban Flow
+                p High-velocity choreography focusing on spatial awareness and rapid-fire execution.
+
+            //- Medium Item
+            div.bento-item.medium
+                h3 Contemporary Tech
+                p A deep dive into fluid mechanics and emotional storytelling through controlled movement.
+
+            //- Wide Item: Professional Preparation
+            div.bento-item.wide
+                div.wide-content
+                    div.text-box
+                        h3 Professional Performance Lab
+                        p Advanced analytics for stage presence. We provide data-driven feedback on synchronization and performance psychology to prepare you for the global spotlight.
+                    div.visual-icon ⚡
+
+            //- Small Item
+            div.bento-item.small
+                h3 Studio X
+                p Elite workshops.
+
+            //- Small Item
+            div.bento-item.small
+                h3 Junior Prep
+                p Ages 8-14.

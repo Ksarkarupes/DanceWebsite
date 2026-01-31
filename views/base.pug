@@ -1,20 +1,26 @@
 doctype html
 html
     head
-        title CXDance Academy
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title CXDance Academy | Master the Art of Movement
         block scripts
         block style
     body
         nav#navbar
-            ul
-                div#logo
-                    img(src="/static/img/logo.png")
-                    | CXDA
+            div#logo
+                img(src="/static/img/logo.png" alt="CXDA Logo")
+                span.logo-text CXDA
+            ul.nav-links
                 li #[a(href="/") Home] 
-                li #[a(href="/") About] 
-                li #[a(href="/contact") Contact Us]
-                li #[a(href="/") Class Info]
-                li #[a(href="/") Services]
-        block content
+                li #[a(href="/about") Academy] 
+                li #[a(href="/contact") Join Now]
+                li #[a(href="/classes") Programs]
+                li #[a(href="/services") Studio]
+        
+        main#main-content
+            block content
+            
         footer#footer
-            | Copyright ©2022 CXDance Academy  |  All Rights Reserved 
+            div.footer-container
+                p Copyright © 2026 CXDance Academy | All Rights Reserved

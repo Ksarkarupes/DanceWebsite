@@ -1,46 +1,118 @@
-@import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&family=ZCOOL+QingKe+HuangYou&display=swap');
-*{  
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800&display=swap');
+
+* {  
     margin: 0;
     box-sizing: border-box;
     padding: 0;  
 }
-.container{
-    min-height: 86.25vh;
-    
-    background: center / cover no-repeat url("/static/bg.jpg");
-}
-h1{
-    text-align:  center;
-    color: white;
-    font-family: 'ZCOOL QingKe HuangYou';
-    font-size: 55px;
-    padding: 40px;
 
+.container {
+    min-height: 86.25vh;
+    /* Added a dark gradient overlay to make white text pop against the background */
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("/static/bg.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
 }
-.myForm{
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.contact-desc {
+    color: #a2a2a2;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Inter', sans-serif;
+    max-width: 500px;
+}
+
+.myForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    max-width: 550px;
+    /* Premium Glassmorphism effect */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 50px 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
 }
-.myInput{
-    text-align: center;
-    width: 40%;
-    padding: 9px;
-    margin: 8px;
-    font-size: 15px;
-    border: 2px solid rgb(7, 7, 7);
+
+.myInput {
+    text-align: left;
+    width: 100%;
+    padding: 16px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    /* Darker inputs to prevent clashing with white text */
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     outline: none;
+    transition: all 0.3s ease;
 }
-.btn{
-    margin: 10px;
-    padding: 12px 16px;
+
+.myInput::placeholder {
+    color: #666;
+}
+
+/* Focused state with the "Industrial Orange" accent */
+.myInput:focus {
+    border-color: #ff8c00;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.2);
+}
+
+/* Adjusting the text area for queries */
+textarea.myInput {
+    min-height: 120px;
+    resize: none;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    border: 2px solid rgb(7, 7, 7);
-    background-color: rgb(7, 7, 7);
-    color: white;
-    border-radius: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    background-color: #ff8c00; /* Safety Orange */
+    color: #000;
+    border-radius: 12px;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Footer Fix */
+#footer {
+    background-color: #000;
+    color: #555;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #111;
 }

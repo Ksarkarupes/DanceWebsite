@@ -1,0 +1,47 @@
+extends base.pug
+
+block style 
+    style
+        include ../static/style.css
+        include ../static/styleAcademy.css
+
+block content 
+    section#academyHero
+        div.hero-content
+            h1 The Academy
+            p.tagline Precision Engineering in Every Movement
+
+    section.stats-bar
+        div.stat-item
+            h2 5000+
+            p Sq. Ft. Studio
+        div.stat-item
+            h2 10+
+            p Elite Mentors
+        div.stat-item
+            h2 100%
+            p Performance Focus
+
+    section.info-section
+        div.info-container
+            div.info-text
+                h2 Architectural Movement
+                p Established by developers from NIT Raipur, Kinetic Artistry is the first studio to apply structural engineering principles to contemporary dance. We believe that every movement must have a solid foundation, much like the backend of a robust application.
+                p Our facility is engineered for high-performance training, featuring professional-grade impact-absorbing flooring and integrated audio systems designed for acoustic perfection.
+            div.info-visual
+                //- This will be a high-end CSS-styled box in styleAcademy.css
+                div.visual-accent-box
+                    span Structure
+                    span & 
+                    span Soul
+
+    section.mission-grid
+        div.mission-card
+            h3 The Blueprint
+            p Every syllabus is designed with algorithmic precision to ensure student progress is linear and measurable.
+        div.mission-card
+            h3 The Infrastructure
+            p Our studio utilizes industrial-grade equipment to provide a safe and professional environment for all ages.
+        div.mission-card
+            h3 The Scalability
+            p From basic foundations to professional stage presence, we provide a learning path that scales with your ambition.

@@ -1,58 +1,63 @@
 doctype html
 html
   head
-    title CXDance Academy
+    title Kinetic Artistry | Premium Dance Academy
     style
       include ../static/style.css
   body
     nav#navbar
+        div#logo
+            img(src="/static/img/logo.png" alt="CXDA Logo")
+            span.logo-text CXDA
         ul
-            div#logo
-                img(src="/static/img/logo.png")
-                | CXDA
             li #[a(href="/") Home] 
-            li #[a(href="/") About] 
-            li #[a(href="/contact") Contact Us]
-            li #[a(href="/") Class Info]
-            li #[a(href="/") Services]
+            li #[a(href="/") Academy] 
+            li #[a(href="/contact") Join Now]
+            li #[a(href="/") Programs]
+            li #[a(href="/") Studio]
     
     section#introSection 
-        div Welcome to CXDance Academy 
-        div.small "ANYBODY CAN DANCE"
+        div Kinetic Artistry Academy
+        div.small Master the Rhythm. Define the Movement.
 
     section#missionSection 
-        h2 Our Mission
-        div.card
-            h3 Perfect Your Form 
-            div.card-box
-                div.card-img
-                    img(src="/static/img/1.png")
-                div.card-content
-                    p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, magni.
-        div.card
-            h3 Best Teachers
-            div.card-box
-                div.card-img
-                    img(src="/static/img/2.png")
-                div.card-content
-                    p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, magni.
+        h2 Why Choose Our Academy
+        //- The wrapper below ensures your cards align in a row
+        div.cards-container
+            div.card
+                h3 Precision & Technique 
+                div.card-box
+                    div.card-img
+                        img(src="/static/img/1.png")
+                    div.card-content
+                        p Refine your movements with a curriculum focused on structural form and artistic expression.
+            div.card
+                h3 Industry Mentorship
+                div.card-box
+                    div.card-img
+                        img(src="/static/img/2.png")
+                    div.card-content
+                        p Learn directly from professional choreographers with decades of experience on the global stage.
 
-        div.card
-            h3 Largest Dance Auditorium
-            div.card-box
-                div.card-img
-                    img(src="/static/img/3.png")
-                div.card-content
-                    p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, magni.
+            div.card
+                h3 World-Class Facilities
+                div.card-box
+                    div.card-img
+                        img(src="/static/img/3.png")
+                    div.card-content
+                        p Train in state-of-the-art auditoriums designed for professional acoustics and high-performance safety.
 
     section#sponsorSection 
-        h2 Our Sponsor
+        h2 Our Official Partners
         div#sponsors
             img(src="/static/img/logo1.png", class="spImage")
             img(src="/static/img/logo2.png", class="spImage")
             img(src="/static/img/logo3.png", class="spImage")
             img(src="/static/img/logo4.png", class="spImage")
+            
     footer#footer
-        | Copyright ©2022 CXDance Academy  |  All Rights Reserved 
+        div.footer-container
+            p Copyright © 2026 Kinetic Artistry Academy | All Rights Reserved
+            
     script
       include ../static/index.js
