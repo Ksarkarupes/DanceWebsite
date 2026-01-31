@@ -1,28 +1,19 @@
-doctype html
-html
-  head
-    title Kinetic Artistry | Premium Dance Academy
-    style
-      include ../static/style.css
-  body
-    nav#navbar
-        div#logo
-            img(src="/static/img/logo.png" alt="CXDA Logo")
-            span.logo-text CXDA
-        ul
-            li #[a(href="/") Home] 
-            li #[a(href="/") Academy] 
-            li #[a(href="/contact") Join Now]
-            li #[a(href="/") Programs]
-            li #[a(href="/") Studio]
-    
+extends base.pug
+
+block scripts 
+    script(src='/static/index.js')
+
+block style 
+    //- Main CSS is handled by base.pug now.
+    //- Do NOT use "include" here.
+
+block content 
     section#introSection 
         div Kinetic Artistry Academy
         div.small Master the Rhythm. Define the Movement.
 
     section#missionSection 
         h2 Why Choose Our Academy
-        //- The wrapper below ensures your cards align in a row
         div.cards-container
             div.card
                 h3 Precision & Technique 
@@ -54,10 +45,3 @@ html
             img(src="/static/img/logo2.png", class="spImage")
             img(src="/static/img/logo3.png", class="spImage")
             img(src="/static/img/logo4.png", class="spImage")
-            
-    footer#footer
-        div.footer-container
-            p Copyright © 2026 Kinetic Artistry Academy | All Rights Reserved
-            
-    script
-      include ../static/index.js
